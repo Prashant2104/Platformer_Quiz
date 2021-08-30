@@ -88,14 +88,16 @@ public class Quiz_Manager : MonoBehaviour
         QuestionText.text = "Exit through the open gate to finish and submit the quiz";
 
         gate.OpenGate();
-
-        //QuizPanel.SetActive(false);
-        //Time.timeScale = 0f;
     }
 
     public void OnStartbuttonClick()
     {
         InstructionsPanel.SetActive(false);
         QuizPanel.SetActive(true);
+    }
+
+    public void OnExitButtonClick()
+    {
+        Application.Quit();
     }
 }
