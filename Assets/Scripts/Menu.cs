@@ -20,7 +20,7 @@ public class Menu : MonoBehaviour
         Name = Name_inputField.GetComponent<Text>().text;
         Phone = Phone_inputField.GetComponent<Text>().text;
 
-        Displaytext = "Thanks for participating \n\n" + Name + "\n\n" + Phone;
+        Displaytext = "THANKS FOR PLAYING\n\n" + Name + "\n\n" + Phone;
 
         SceneManager.LoadScene(1);
     }
