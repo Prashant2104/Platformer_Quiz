@@ -12,13 +12,13 @@ public class Gate : MonoBehaviour
 
     private Animator anim;
     private Quiz_Manager quiz;
-    private Menu menu;
+    private DataBase data;
 
     void Start()
     {
         anim = GetComponent<Animator>();
         quiz = FindObjectOfType<Quiz_Manager>();
-        menu = FindObjectOfType<Menu>();
+        data = FindObjectOfType<DataBase>();
 
         gameObject.transform.GetChild(0).gameObject.SetActive(false);
 
@@ -38,7 +38,7 @@ public class Gate : MonoBehaviour
         GameOverPanel.SetActive(true);
         quiz.QuizPanel.SetActive(false);
 
-        Info.text = menu.Displaytext.ToString();
+        Info.text = data.Displaytext.ToString();
         ScoreText.text = "Your Final Score: " + quiz.Score.ToString();
 
         if (quiz.Score <= quiz.MaxScore/2)

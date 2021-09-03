@@ -56,7 +56,7 @@ public class Quiz_Manager : MonoBehaviour
         {
             Options[i].GetComponent<Answers>().isCorrect = false;
 
-            Options[i].transform.GetChild(1).GetComponent<Text>().text = Questions[QuestionIndex].Answers[i];
+            Options[i].transform.GetChild(0).GetComponent<Text>().text = Questions[QuestionIndex].Answers[i];
 
             if (Questions[QuestionIndex].CorrectAnswer == i + 1)
             {
@@ -86,6 +86,10 @@ public class Quiz_Manager : MonoBehaviour
     void GameOver()
     {
         QuestionText.text = "Exit through the open gate to finish and submit the quiz";
+        for(int i = 0; i < 4; i++)
+        {
+            Options[i].transform.GetChild(0).GetComponent<Text>().text = "The open space on the right ->";
+        }
 
         gate.OpenGate();
     }

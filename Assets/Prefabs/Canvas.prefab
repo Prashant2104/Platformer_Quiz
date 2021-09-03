@@ -430,7 +430,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5132702326298389719}
+      - m_Target: {fileID: 0}
         m_MethodName: OnStartbuttonClick
         m_Mode: 1
         m_Arguments:
@@ -765,7 +765,6 @@ GameObject:
   - component: {fileID: 5132702326298389713}
   - component: {fileID: 5132702326298389714}
   - component: {fileID: 5132702326298389715}
-  - component: {fileID: 5132702326298389719}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -853,23 +852,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &5132702326298389719
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5132702326298389724}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7fadd223d31e4f48a017fb36da3fda9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: 
-  Phone: 
-  Name_inputField: {fileID: 5132702326126879102}
-  Phone_inputField: {fileID: 5132702325017332713}
-  Displaytext: 
 --- !u!1 &5132702326456541993
 GameObject:
   m_ObjectHideFlags: 0

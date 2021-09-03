@@ -42,10 +42,13 @@ public class Player : MonoBehaviour
             spriteRenderer.flipX = true;            
         }
 
-        if (Input.GetKey(KeyCode.Space) && IsGrounded == true)
+        if (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
         {
-            rigidBody.velocity = new Vector2(rigidBody.velocity.x, jumpspeed);
-        }
+            if (IsGrounded == true)
+            {
+                rigidBody.velocity = new Vector2(rigidBody.velocity.x, jumpspeed);
+            }
+        }            
 
         if (IsGrounded)
         {

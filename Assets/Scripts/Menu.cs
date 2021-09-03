@@ -10,18 +10,33 @@ public class Menu : MonoBehaviour
     public string Phone;
     public GameObject Name_inputField;
     public GameObject Phone_inputField;
-    public string Displaytext;
-    private void Awake()
+    public GameObject StartQuiz;
+    public GameObject EnterData;
+
+   /* private void Start()
     {
-        DontDestroyOnLoad(this);
+        Phone_inputField.characterValidation = InputField.CharacterValidation.Integer;    
+    }*/
+    private void Update()
+    {
+        if(!string.IsNullOrWhiteSpace(Name) && !string.IsNullOrWhiteSpace(Phone))
+        {
+            StartQuiz.SetActive(true);
+            EnterData.SetActive(false);
+        }
+        else
+        {
+            StartQuiz.SetActive(false);
+        }
     }
     public void StoreData()
     {
         Name = Name_inputField.GetComponent<Text>().text;
         Phone = Phone_inputField.GetComponent<Text>().text;
+    }
 
-        Displaytext = "THANKS FOR PLAYING\n\n" + Name + "\n\n" + Phone;
-
+    public void OnStartButtonClick()
+    {
         SceneManager.LoadScene(1);
     }
 }
