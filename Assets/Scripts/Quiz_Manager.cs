@@ -99,9 +99,16 @@ public class Quiz_Manager : MonoBehaviour
         InstructionsPanel.SetActive(false);
         QuizPanel.SetActive(true);
     }
-
     public void OnExitButtonClick()
     {
         Application.Quit();
+    }
+    public void OnGoogleButtonClick()
+    {
+        Application.OpenURL("https://docs.google.com/forms/d/e/1FAIpQLScXwXRCC5GTxPuq3iMAjuw-eWm9VtGn96REEOI_QfpQZBl9Eg/viewform?usp=sf_link");
+    }
+    public void Prashant()
+    {
+        Application.OpenURL("https://www.linkedin.com/in/prashant-gupta-3465b61a3/");
     }
 }
