@@ -15,10 +15,13 @@ public class Quiz_Manager : MonoBehaviour
     public int Score = 0;
     public int MaxScore = 0;
     public Player player;
+    public bool Instructions, InstruxtionsEnabled;
 
     private Gate gate;
     private void Awake()
     {
+        Instructions = true;
+        InstruxtionsEnabled = false;
         InstructionsPanel.SetActive(true);
         QuizPanel.SetActive(false);
     }
@@ -31,6 +34,12 @@ public class Quiz_Manager : MonoBehaviour
     private void Update()
     {
         ScoreText.text = "Score = " + Score.ToString();
+
+        if(InstruxtionsEnabled && Input.GetKeyDown(KeyCode.Escape))
+        {
+            Instructions = !Instructions;
+            InstructionsPanel.SetActive(Instructions);
+        }
     }
 
     public void Correct()
@@ -83,7 +92,7 @@ public class Quiz_Manager : MonoBehaviour
         }
     }
 
-    void GameOver()
+    public void GameOver()
     {
         QuestionText.text = "Exit through the open gate to finish and submit the quiz";
         for(int i = 0; i < 4; i++)
@@ -96,8 +105,11 @@ public class Quiz_Manager : MonoBehaviour
 
     public void OnStartbuttonClick()
     {
+        InstruxtionsEnabled = true;
         InstructionsPanel.SetActive(false);
+        Instructions = false;
         QuizPanel.SetActive(true);
+        Cursor.visible = false;
     }
     public void OnExitButtonClick()
     {

@@ -35,6 +35,8 @@ public class Gate : MonoBehaviour
 
     public void GameOverScore()
     {
+        Cursor.visible = true;
+
         GameOverPanel.SetActive(true);
         quiz.QuizPanel.SetActive(false);
 
